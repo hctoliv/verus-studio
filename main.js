@@ -67,12 +67,25 @@
 
   /* ---------- header + menu ---------- */
   const hd = $('#hd'), burger = $('#burger');
-  burger.addEventListener('click', () => {
-    const o = hd.classList.toggle('menu-open');
+  let menuOpen = false;
+  const setMenu = o => {
+    if (o === menuOpen) return;
+    menuOpen = o;
+    hd.classList.toggle('menu-open', o);
     burger.setAttribute('aria-expanded', o);
-    body.style.overflow = o ? 'hidden' : '';
-  });
-  $$('#nav a').forEach(a => a.addEventListener('click', () => { hd.classList.remove('menu-open'); body.style.overflow = ''; }));
+    burger.setAttribute('aria-label', o ? 'Fechar menu' : 'Abrir menu');
+    document.documentElement.classList.toggle('is-locked', o);
+    // logo goes to the header while the menu is open
+    fly.classList.add('is-snap');
+    placeFly(scrollY); syncFlyHide();
+    clearTimeout(setMenu.t); setMenu.t = setTimeout(() => fly.classList.remove('is-snap'), 600);
+  };
+  burger.addEventListener('click', () => setMenu(!menuOpen));
+  $$('#nav a').forEach(a => a.addEventListener('click', () => setMenu(false)));
+  addEventListener('keydown', e => { if (e.key === 'Escape') setMenu(false); });
+  addEventListener('resize', () => { if (innerWidth > 1000) setMenu(false); });
+  // no pinch / double-tap zoom (iOS ignores user-scalable=no)
+  ['gesturestart', 'gesturechange'].forEach(t => document.addEventListener(t, e => e.preventDefault(), { passive: false }));
   const navLinks = $$('#nav a').map(a => ({ a, sec: $(a.getAttribute('href')) }));
 
   /* ---------- flying logo: hero slot -> header slot ---------- */
@@ -88,7 +101,7 @@
   };
   const placeFly = y => {
     const vh = innerHeight;
-    flyE = easeIO(clamp(y / (vh * .55)));
+    flyE = menuOpen ? 1 : easeIO(clamp(y / (vh * .55)));
     const s = lerp(1, dock.w / base.w, flyE);
     const fx = lerp(base.x, dock.x, flyE), fy = lerp(base.y - y, dock.y, flyE);
     fly.style.transform = `translate3d(${fx.toFixed(1)}px,${fy.toFixed(1)}px,0) scale(${s.toFixed(4)})`;
