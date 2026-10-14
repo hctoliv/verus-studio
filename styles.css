@@ -307,7 +307,8 @@ html.is-locked,html.is-locked body{overflow:hidden}
 .case--chrome{background:linear-gradient(135deg,#ffffff,#dfe4ee 45%,#b9c1d1);color:var(--ink)}
 .case--navy{background:radial-gradient(ellipse at 0 100%,rgba(255,92,170,.22),transparent 55%),var(--navy);color:#fff}
 .case__media{position:relative;overflow:hidden;background:#000}
-.case__main{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:scale(calc(1.12 - var(--cp,0)*.12));transition:transform .2s linear}
+.case__bg{position:absolute;inset:-40px;background-size:cover;background-position:center;filter:blur(28px) brightness(.55) saturate(1.2);transform:scale(1.1)}
+.case__main{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 10px 30px rgba(0,0,0,.45))}
 .case__pip{position:absolute;right:18px;bottom:18px;width:34%;aspect-ratio:3/4;object-fit:cover;border-radius:14px;border:3px solid #fff;box-shadow:0 20px 40px rgba(0,0,0,.5);transform:rotate(5deg) translateY(calc((1 - var(--cp,0))*30px));transition:transform .5s var(--ease)}
 .case:hover .case__pip{transform:rotate(-2deg) scale(1.05)}
 .case__sound{position:absolute;left:16px;bottom:16px;padding:8px 14px;border-radius:99px;background:rgba(3,6,26,.6);backdrop-filter:blur(8px);color:#fff;border:1px solid rgba(255,255,255,.3)}
