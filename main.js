@@ -285,6 +285,19 @@
   }));
   render();
 
+  /* ---------- cases ---------- */
+  const cases = $$('.case');
+  $$('.case video').forEach(v => vio.observe(v));
+  $$('.case__sound').forEach(b => b.addEventListener('click', () => {
+    const v = b.parentElement.querySelector('video');
+    if (!v.getAttribute('src')) v.src = v.dataset.lazy;
+    v.muted = !v.muted; if (!v.muted) { v.currentTime = 0; v.play().catch(() => {}); }
+    b.classList.toggle('is-on', !v.muted); b.querySelector('i').textContent = v.muted ? 'off' : 'on';
+    b.setAttribute('aria-label', v.muted ? 'Ligar o som' : 'Desligar o som');
+  }));
+  $$('.case__body').forEach(el => el.classList.add('rv'));
+  $$('.case__body').forEach(el => rio.observe(el));
+
   /* ---------- cursor: ring + scissors ---------- */
   if (fine && !reduce) {
     const cur = $('#cur');
@@ -338,6 +351,17 @@
       track.style.transform = `translate3d(${(-cp * catMax).toFixed(1)}px,0,0)`;
       catBar.style.transform = `scaleX(${cp.toFixed(3)})`;
     }
+    // cases: earlier cards shrink and dim as the next one covers them
+    cases.forEach((c, i) => {
+      const r = c.getBoundingClientRect();
+      c.style.setProperty('--cp', clamp((vh - r.top) / vh).toFixed(3));
+      if (mq.matches) return;
+      const next = cases[i + 1];
+      if (!next) return;
+      const k = clamp(1 - (next.getBoundingClientRect().top - r.top) / r.height);
+      c.style.setProperty('--sc', (1 - k * .06).toFixed(4));
+      c.style.setProperty('--br', (1 - k * .45).toFixed(3));
+    });
     // razor dividers
     cuts.forEach(c => {
       const r = c.getBoundingClientRect();
