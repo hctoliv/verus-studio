@@ -1,0 +1,460 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Verus Studio Barber · Tatuapé</title>
+<meta name="description" content="Espaço pra quem valoriza qualidade. Tranças, corte, barba e estética com hora marcada na Rua Platina, 266, Tatuapé, São Paulo.">
+<meta property="og:title" content="Verus Studio Barber">
+<meta property="og:description" content="Espaço pra quem valoriza qualidade. Atendimento com hora marcada no Tatuapé.">
+<meta property="og:image" content="img/og.jpg">
+<meta name="theme-color" content="#03061a">
+<link rel="icon" href="img/favicon.png">
+<link rel="preload" as="image" href="img/logo-verus.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..900&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body class="is-intro">
+
+<!-- shared drawings -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="gBlade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff"/><stop offset=".45" stop-color="#cfd5e2"/><stop offset=".5" stop-color="#7d869b"/><stop offset=".62" stop-color="#eef1f7"/><stop offset="1" stop-color="#9aa3b6"/>
+    </linearGradient>
+    <linearGradient id="gHandle" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2a3a8f"/><stop offset=".5" stop-color="#0a1350"/><stop offset="1" stop-color="#02061e"/>
+    </linearGradient>
+  </defs>
+  <symbol id="razor" viewBox="0 0 300 64">
+    <path d="M6 26 Q4 32 6 38 L150 41 Q156 32 150 23 Z" fill="url(#gHandle)" stroke="#8d96aa" stroke-width="1.5"/>
+    <path d="M20 31.5 L140 31.5" stroke="rgba(255,255,255,.25)" stroke-width="1"/>
+    <path d="M150 19 L268 13 Q296 14 294 32 Q292 50 266 51 L150 45 Q160 32 150 19 Z" fill="url(#gBlade)"/>
+    <path d="M150 19 L268 13 Q290 14 293 26 L156 27 Z" fill="rgba(255,255,255,.55)"/>
+    <path d="M152 45 L266 51 Q288 50 293 38" fill="none" stroke="#fff" stroke-width="1.6"/>
+    <circle cx="150" cy="32" r="6" fill="#d7dce6" stroke="#5c6378" stroke-width="1.5"/>
+    <circle cx="150" cy="32" r="2" fill="#5c6378"/>
+  </symbol>
+  <symbol id="scissors" viewBox="-24 -24 48 48">
+    <g class="sc-a"><path d="M0 0 L21 -4.5 L21.5 -2.5 Z" fill="#fff"/><path d="M0 0 L-6 3.5" stroke="#fff" stroke-width="2.2"/><circle cx="-11" cy="6.5" r="5.5" fill="none" stroke="#fff" stroke-width="2.2"/></g>
+    <g class="sc-b"><path d="M0 0 L21 4.5 L21.5 2.5 Z" fill="#fff"/><path d="M0 0 L-6 -3.5" stroke="#fff" stroke-width="2.2"/><circle cx="-11" cy="-6.5" r="5.5" fill="none" stroke="#fff" stroke-width="2.2"/></g>
+    <circle r="1.8" fill="#1f4dff"/>
+  </symbol>
+</svg>
+
+<!-- INTRO: barber pole + navalha -->
+<div class="intro" id="intro" aria-hidden="true">
+  <div class="intro__half intro__half--top"></div>
+  <div class="intro__half intro__half--bot"></div>
+  <div class="intro__stage">
+    <div class="pole">
+      <i class="pole__ball"></i>
+      <i class="pole__cap"></i>
+      <div class="pole__glass"><span></span></div>
+      <i class="pole__cap pole__cap--bot"></i>
+    </div>
+    <p class="intro__txt"><span class="mono">Rua Platina, 266</span><b id="introNum">00</b><span class="mono">Tatuapé · SP</span></p>
+  </div>
+  <div class="intro__cut"><i class="intro__line"></i><svg class="intro__razor"><use href="#razor"/></svg></div>
+</div>
+
+<!-- LOGO que voa do hero pro header -->
+<a href="#top" class="fly" id="fly" aria-label="Verus Studio Barber, início">
+  <span class="fly__in" id="flyIn">
+    <span class="fly__glow"></span>
+    <img class="fly__img" src="img/logo-verus.png" alt="Verus Studio Barber">
+    <span class="fly__light"></span>
+    <span class="fly__sheen"></span>
+  </span>
+</a>
+
+<!-- HEADER -->
+<header class="hd" id="hd">
+  <span class="hd__slot" id="hdSlot" aria-hidden="true"></span>
+  <nav class="hd__nav" id="nav">
+    <a href="#trancas">Tranças</a>
+    <a href="#cortes">Cortes</a>
+    <a href="#equipe">Equipe</a>
+    <a href="#agendar">Preços</a>
+    <a href="#onde">Onde</a>
+  </nav>
+  <div class="hd__right">
+    <a href="#agendar" class="btn btn--chrome hd__cta" data-magnet>Agendar</a>
+    <button class="hd__burger" id="burger" aria-label="Abrir menu" aria-expanded="false"><span></span><span></span></button>
+  </div>
+</header>
+
+<!-- poste lateral = progresso da página -->
+<div class="sidepole" aria-hidden="true"><i class="sidepole__cap"></i><div class="sidepole__glass" id="sidepole"></div><i class="sidepole__cap"></i></div>
+
+<!-- cursor -->
+<div class="cur" id="cur" aria-hidden="true"><span class="cur__ring"></span><svg class="cur__sc"><use href="#scissors"/></svg></div>
+
+<main id="top">
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="hero__videos">
+    <video class="hero__v" src="video/hero-barrel.mp4" poster="video/hero-barrel.jpg" muted playsinline loop autoplay preload="auto"></video>
+    <video class="hero__v hero__v--main" src="video/hero-twist.mp4" poster="video/hero-twist.jpg" muted playsinline loop autoplay preload="auto"></video>
+    <video class="hero__v" src="video/hero-fachada.mp4" poster="video/hero-fachada.jpg" muted playsinline loop autoplay preload="auto"></video>
+  </div>
+  <div class="hero__shade"></div>
+  <div class="grain"></div>
+  <div class="hero__inner" id="heroInner">
+    <h1 class="sr">Verus Studio Barber</h1>
+    <div class="hero__slot" id="heroSlot" aria-hidden="true"></div>
+    <p class="hero__line"><span>Espaço pra quem</span> <em>valoriza qualidade.</em></p>
+    <div class="hero__ctas">
+      <a href="#agendar" class="btn btn--blue" data-magnet>Montar meu horário</a>
+      <a href="#trancas" class="btn btn--ghost" data-magnet>Ver as tranças</a>
+    </div>
+  </div>
+  <div class="hero__foot">
+    <span class="status" data-status><i></i><b>Tatuapé</b></span>
+    <span class="mono hero__scroll">role <i></i></span>
+  </div>
+  <a class="seal" href="#agendar" aria-label="Agendar horário">
+    <svg viewBox="0 0 200 200" class="seal__ring">
+      <defs><path id="sealPath" d="M100,100 m-74,0 a74,74 0 1,1 148,0 a74,74 0 1,1 -148,0"/></defs>
+      <text><textPath href="#sealPath">VERUS STUDIO BARBER ✦ HORA MARCADA ✦ TATUAPÉ ✦ </textPath></text>
+    </svg>
+    <svg class="seal__sc"><use href="#scissors"/></svg>
+  </a>
+</section>
+
+<!-- TICKER -->
+<div class="ticker" aria-hidden="true">
+  <div class="ticker__track">
+    <span>Tranças</span><b>✦</b><span>Corte</span><b>✦</b><span>Barba e Bigode</span><b>✦</b><span>Sobrancelha</span><b>✦</b><span>Progressiva</span><b>✦</b><span>Estética Facial</span><b>✦</b>
+    <span>Tranças</span><b>✦</b><span>Corte</span><b>✦</b><span>Barba e Bigode</span><b>✦</b><span>Sobrancelha</span><b>✦</b><span>Progressiva</span><b>✦</b><span>Estética Facial</span><b>✦</b>
+  </div>
+</div>
+
+<!-- MANIFESTO -->
+<section class="manifesto" id="manifesto">
+  <div class="manifesto__word" aria-hidden="true"><span>V</span><span>E</span><span>R</span><span>U</span><span>S</span></div>
+  <p class="manifesto__def"><span class="mono">verus</span> <em>adj.</em> verdadeiro.</p>
+  <p class="manifesto__text" data-words>Um conceito de autenticidade, força e identidade. Verdade no trabalho, na conexão e na experiência de cada pessoa que passa por aqui.</p>
+  <div class="manifesto__sign">
+    <p>Nova identidade, mesmo propósito.</p>
+    <p class="serif">Bem-vindos (as) à Verus.</p>
+  </div>
+</section>
+
+<div class="cut" aria-hidden="true"><i class="cut__line"></i><svg class="cut__razor"><use href="#razor"/></svg></div>
+
+<!-- VIRAIS -->
+<section class="viral" id="trancas">
+  <header class="sec-head">
+    <p class="kicker">As tranças que rodaram o feed</p>
+    <h2 class="h2" data-split>Mais de <span class="chrome" data-count="480000" data-format="mil">480 mil</span> views.<br><span class="serif">Uma cabeça de cada vez.</span></h2>
+  </header>
+  <div class="viral__grid">
+    <article class="reel" data-reel="video/reel-davi.mp4">
+      <div class="reel__media" data-clip data-cursor="play">
+        <video data-lazy="video/reel-davi.mp4" poster="video/reel-davi.jpg" muted playsinline loop preload="none"></video>
+        <button class="reel__play" aria-label="Assistir com som"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button>
+      </div>
+      <p class="reel__views"><b data-count="235026">235.026</b> views</p>
+      <p class="reel__cap">“Primeira vez do Davi fazendo trança, depois de muita insistência ✋🏽😭”</p>
+      <p class="mono reel__tag">#braids #nagô</p>
+    </article>
+    <article class="reel" data-reel="video/reel-barrel.mp4">
+      <div class="reel__media" data-clip data-cursor="play">
+        <video data-lazy="video/reel-barrel.mp4" poster="video/reel-barrel.jpg" muted playsinline loop preload="none"></video>
+        <button class="reel__play" aria-label="Assistir com som"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button>
+      </div>
+      <p class="reel__views"><b data-count="184074">184.074</b> views</p>
+      <p class="reel__cap">“Barrel Twist com mini passo a passo, espero ajudar vocês com esse tipo de conteúdo! 💫”</p>
+      <p class="mono reel__tag">#braids #barrel</p>
+    </article>
+    <article class="reel" data-reel="video/reel-nago.mp4">
+      <div class="reel__media" data-clip data-cursor="play">
+        <video data-lazy="video/reel-nago.mp4" poster="video/reel-nago.jpg" muted playsinline loop preload="none"></video>
+        <button class="reel__play" aria-label="Assistir com som"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button>
+      </div>
+      <p class="reel__views"><b data-count="61145">61.145</b> views</p>
+      <p class="reel__cap">“Nagô freestyle com finalização coméia nas pontas 🔥🔥🔥”</p>
+      <p class="mono reel__tag">#braids #nagô #viral</p>
+    </article>
+  </div>
+</section>
+
+<!-- CATÁLOGO HORIZONTAL -->
+<section class="cat" id="catalogo">
+  <div class="cat__pin">
+    <div class="cat__head">
+      <p class="kicker">Catálogo</p>
+      <h2 class="h2" data-split>Escolha <br>a sua <br><span class="serif">trança.</span></h2>
+      <p class="cat__hint mono">role <i>→</i></p>
+      <div class="cat__bar"><i id="catBar"></i></div>
+    </div>
+    <div class="cat__track" id="catTrack">
+      <article class="style">
+        <div class="style__media" data-cursor="snip"><video data-lazy="video/top3-nago.mp4" poster="video/top3-nago.jpg" muted playsinline loop preload="none"></video></div>
+        <span class="style__n mono">01</span>
+        <h3>Nagô</h3>
+        <p>Top 3 tranças de setembro 💙💈</p>
+      </article>
+      <article class="style">
+        <div class="style__media" data-cursor="snip"><video data-lazy="video/hero-twist.mp4" poster="video/hero-twist.jpg" muted playsinline loop preload="none"></video></div>
+        <span class="style__n mono">02</span>
+        <h3>Twist Braids</h3>
+        <p>Twist Braidsss 🔥 · 🎥 @taka.filmes</p>
+      </article>
+      <article class="style">
+        <div class="style__media" data-cursor="snip"><video data-lazy="video/fulani.mp4" poster="video/fulani.jpg" muted playsinline loop preload="none"></video></div>
+        <span class="style__n mono">03</span>
+        <h3>Fulani Braids</h3>
+        <p>Transformação! Fulani Braids c retwist 🔥</p>
+      </article>
+      <article class="style">
+        <div class="style__media" data-cursor="snip"><img src="img/top3-1.jpg" alt="Tranças nagô com desenho" loading="lazy"></div>
+        <span class="style__n mono">04</span>
+        <h3>Nagô desenhada</h3>
+        <p>Top 3 tranças de setembro 💙💈</p>
+      </article>
+      <article class="style">
+        <div class="style__media" data-cursor="snip"><img src="img/twist-braids.jpg" alt="Twist braids" loading="lazy"></div>
+        <span class="style__n mono">05</span>
+        <h3>Twist</h3>
+        <p>TWIST BRAIDS 🫆</p>
+      </article>
+      <article class="style">
+        <div class="style__media" data-cursor="snip"><video data-lazy="video/hero-barrel.mp4" poster="video/hero-barrel.jpg" muted playsinline loop preload="none"></video></div>
+        <span class="style__n mono">06</span>
+        <h3>Barrel Twist</h3>
+        <p>Com mini passo a passo no nosso Instagram.</p>
+      </article>
+      <article class="style">
+        <div class="style__media" data-cursor="snip"><img src="img/murilo-paim.jpg" alt="Duda com o jogador Murilo Paim" loading="lazy"></div>
+        <span class="style__n mono">07</span>
+        <h3>Murilo Paim</h3>
+        <p>“Obrigada pela confiança no meu trabalho, DEUS NO CONTROLE! 💚🙏🏽⚽️”</p>
+      </article>
+      <a class="style style--cta" href="#agendar">
+        <span class="mono">tranças a partir de</span>
+        <b class="chrome">R$ 200</b>
+        <span>Agendar <i>→</i></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- CORTES -->
+<section class="cortes" id="cortes">
+  <header class="sec-head sec-head--center">
+    <p class="kicker">Nossos cortes</p>
+    <h2 class="h2" data-split>Tesoura, máquina<br><span class="serif">e atitude.</span></h2>
+  </header>
+  <div class="rail" data-dir="1">
+    <div class="rail__track">
+      <figure data-cursor="snip"><img src="img/corte-1.jpg" alt="Corte com tranças laterais" loading="lazy"></figure>
+      <figure data-cursor="snip"><img src="img/corte-2.jpg" alt="Corte degradê com franja" loading="lazy"></figure>
+      <figure data-cursor="snip" class="is-video"><video data-lazy="video/corte-mullet.mp4" poster="video/corte-mullet.jpg" muted playsinline loop preload="none"></video></figure>
+      <figure data-cursor="snip"><img src="img/corte-3.jpg" alt="Mullet com risco" loading="lazy"></figure>
+      <figure data-cursor="snip"><img src="img/corte-4.jpg" alt="Corte com cachos e degradê" loading="lazy"></figure>
+      <figure data-cursor="snip"><img src="img/corte-5.jpg" alt="Corte crespo com degradê" loading="lazy"></figure>
+    </div>
+  </div>
+  <div class="rail" data-dir="-1">
+    <div class="rail__track">
+      <figure data-cursor="snip"><img src="img/corte-6.jpg" alt="Twists com degradê" loading="lazy"></figure>
+      <figure data-cursor="snip" class="is-video"><video data-lazy="video/corte-verus.mp4" poster="video/corte-verus.jpg" muted playsinline loop preload="none"></video></figure>
+      <figure data-cursor="snip"><img src="img/corte-7.jpg" alt="Corte social com degradê" loading="lazy"></figure>
+      <figure data-cursor="snip"><img src="img/corte-8.jpg" alt="Tranças nagô com degradê" loading="lazy"></figure>
+      <figure data-cursor="snip"><img src="img/corte-11.jpg" alt="Corte texturizado" loading="lazy"></figure>
+      <figure data-cursor="snip" class="is-video"><video data-lazy="video/maquina.mp4" poster="video/maquina.jpg" muted playsinline loop preload="none"></video></figure>
+      <figure data-cursor="snip"><img src="img/corte-9.jpg" alt="Tranças com fundo azul" loading="lazy"></figure>
+    </div>
+  </div>
+</section>
+
+<div class="cut" aria-hidden="true"><i class="cut__line"></i><svg class="cut__razor"><use href="#razor"/></svg></div>
+
+<!-- EQUIPE -->
+<section class="team" id="equipe">
+  <header class="sec-head">
+    <p class="kicker">Quem atende</p>
+    <h2 class="h2" data-split>Duas cadeiras.<br><span class="serif">O mesmo padrão.</span></h2>
+  </header>
+  <div class="team__grid">
+    <article class="barber" data-barber="Duda">
+      <div class="barber__media" data-clip data-cursor="play">
+        <img src="img/duda.jpg" alt="Duda, barbeira e à frente da Verus" loading="lazy">
+        <video data-lazy="video/duda.mp4" muted playsinline loop preload="none"></video>
+        <span class="barber__chair mono">Cadeira 01</span>
+        <span class="barber__tap mono">toque pra ver em ação</span>
+      </div>
+      <div class="barber__body">
+        <p class="mono">Barbeira · à frente da Verus</p>
+        <h3 class="barber__name chrome">Duda</h3>
+        <p>Une experiência, técnica e criatividade. Especialista em tranças, cabelo, barba e estética, reconhecida pelo cuidado nos detalhes.</p>
+        <ul class="chips"><li>Tranças</li><li>Corte</li><li>Barba e Bigode</li><li>Estética Facial</li></ul>
+        <button class="link" data-pick-barber="Duda">Agendar com a Duda <i>→</i></button>
+      </div>
+    </article>
+    <article class="barber" data-barber="Léo">
+      <div class="barber__media" data-clip data-cursor="play">
+        <img src="img/leo.jpg" alt="Léo, barbeiro, na porta da Verus" loading="lazy">
+        <video data-lazy="video/leo.mp4" muted playsinline loop preload="none"></video>
+        <span class="barber__chair mono">Cadeira 02</span>
+        <span class="barber__tap mono">toque pra ver em ação</span>
+      </div>
+      <div class="barber__body">
+        <p class="mono">Barbeiro</p>
+        <h3 class="barber__name chrome">Léo</h3>
+        <p>Técnica, precisão e atenção aos detalhes. Especialista em cortes, barba e sobrancelha, entende o estilo de cada cliente.</p>
+        <ul class="chips"><li>Corte</li><li>Barba e Bigode</li><li>Depilação</li><li>Sobrancelha</li></ul>
+        <button class="link" data-pick-barber="Léo">Agendar com o Léo <i>→</i></button>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- AGENDAR -->
+<section class="book" id="agendar">
+  <div class="book__wrap">
+    <header class="sec-head">
+      <p class="kicker">Hora marcada</p>
+      <h2 class="h2" data-split>Monte o seu<br><span class="serif">horário.</span></h2>
+      <p class="book__lead">Marque os serviços na tabela, escolha quem vai te atender e o melhor dia. A mensagem já sai pronta no WhatsApp da Verus.</p>
+    </header>
+
+    <form class="book__form" id="bookForm" novalidate>
+      <fieldset class="board">
+        <legend class="board__title"><span>Tabela de preços</span><small class="mono">toque pra marcar</small></legend>
+        <div class="svc" id="svcList">
+          <label class="svc__item"><input type="checkbox" name="svc" value="Corte" data-min="30" data-price="55"><span class="svc__box"></span><span class="svc__name">Corte</span><i class="svc__dots"></i><span class="svc__t">30min</span><span class="svc__p">R$ 55</span></label>
+          <label class="svc__item"><input type="checkbox" name="svc" value="Tranças" data-min="120" data-price="200" data-from><span class="svc__box"></span><span class="svc__name">Tranças</span><i class="svc__dots"></i><span class="svc__t">2h</span><span class="svc__p"><small>a partir de</small> R$ 200</span></label>
+          <label class="svc__item"><input type="checkbox" name="svc" value="Corte e Barba" data-min="60" data-price="110"><span class="svc__box"></span><span class="svc__name">Corte e Barba</span><i class="svc__dots"></i><span class="svc__t">1h</span><span class="svc__p">R$ 110</span></label>
+          <label class="svc__item"><input type="checkbox" name="svc" value="Corte e Sobrancelha" data-min="35" data-price="70"><span class="svc__box"></span><span class="svc__name">Corte e Sobrancelha</span><i class="svc__dots"></i><span class="svc__t">35min</span><span class="svc__p">R$ 70</span></label>
+          <label class="svc__item"><input type="checkbox" name="svc" value="Bigode" data-min="10" data-price="15"><span class="svc__box"></span><span class="svc__name">Bigode</span><i class="svc__dots"></i><span class="svc__t">10min</span><span class="svc__p">R$ 15</span></label>
+          <label class="svc__item"><input type="checkbox" name="svc" value="Progressiva" data-min="50" data-price="100" data-from><span class="svc__box"></span><span class="svc__name">Progressiva</span><i class="svc__dots"></i><span class="svc__t">50min</span><span class="svc__p"><small>a partir de</small> R$ 100</span></label>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend class="mono">Com quem</legend>
+        <div class="seg" id="barberSeg">
+          <label><input type="radio" name="barber" value="Duda"><span>Duda</span></label>
+          <label><input type="radio" name="barber" value="Léo"><span>Léo</span></label>
+          <label><input type="radio" name="barber" value="Tanto faz" checked><span>Tanto faz</span></label>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend class="mono">Quando</legend>
+        <div class="days" id="days"></div>
+        <div class="seg seg--small" id="periodSeg">
+          <label><input type="radio" name="period" value="manhã" checked><span>Manhã</span></label>
+          <label><input type="radio" name="period" value="tarde"><span>Tarde</span></label>
+          <label><input type="radio" name="period" value="noite"><span>Fim do dia</span></label>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend class="mono">Seu nome</legend>
+        <input class="field" type="text" name="nome" id="nome" placeholder="Como a gente te chama?" autocomplete="given-name">
+      </fieldset>
+    </form>
+
+    <aside class="ticket" id="ticket">
+      <div class="ticket__dial">
+        <svg viewBox="0 0 120 120" aria-hidden="true">
+          <circle cx="60" cy="60" r="52" class="dial__bg"/>
+          <circle cx="60" cy="60" r="52" class="dial__fg" id="dialFg"/>
+          <g class="dial__ticks"></g>
+        </svg>
+        <div class="ticket__time"><b id="tTime">0min</b><span class="mono">na cadeira</span></div>
+      </div>
+      <dl class="ticket__rows">
+        <div><dt class="mono">Serviço</dt><dd id="tSvc">marque na tabela</dd></div>
+        <div><dt class="mono">Com</dt><dd id="tBarber">Tanto faz</dd></div>
+        <div><dt class="mono">Quando</dt><dd id="tWhen">—</dd></div>
+        <div class="ticket__total"><dt class="mono">Total</dt><dd id="tPrice">R$ 0</dd></div>
+      </dl>
+      <a class="btn btn--blue btn--wide" id="waBtn" href="https://wa.me/5511984253611" target="_blank" rel="noopener">Enviar no WhatsApp</a>
+      <a class="ticket__alt mono" href="https://www.trinks.com/sao-paulo-sp/?pesquisa=Verus+Studio" target="_blank" rel="noopener">ou agende pelo Trinks ↗</a>
+    </aside>
+  </div>
+</section>
+
+<!-- PARCEIRO -->
+<section class="partner">
+  <div class="partner__img" data-clip><img src="img/fox-produtos.jpg" alt="Linha de produtos Fox For Men" loading="lazy"></div>
+  <div class="partner__body">
+    <p class="kicker">Parceiro oficial</p>
+    <img class="partner__logo" src="img/fox-for-men.png" alt="Fox For Men" loading="lazy">
+    <p>Linha completa de cosméticos e produtos de alta performance pra barba e cabelo. É o que vai na sua cabeça aqui dentro.</p>
+  </div>
+</section>
+
+<div class="cut" aria-hidden="true"><i class="cut__line"></i><svg class="cut__razor"><use href="#razor"/></svg></div>
+
+<!-- ONDE -->
+<section class="where" id="onde">
+  <div class="where__info">
+    <p class="kicker">Onde nos encontrar</p>
+    <h2 class="h2" data-split>Rua Platina, 266<br><span class="serif">Vila Azevedo, Tatuapé</span></h2>
+    <p class="mono where__cep">São Paulo, SP · CEP 03308-010</p>
+    <div class="where__row">
+      <div class="sign" id="sign">
+        <i class="sign__hook"></i>
+        <svg class="sign__cord" viewBox="0 0 120 40" aria-hidden="true"><path d="M10 40 L60 2 L110 40" fill="none" stroke="#a7afc0" stroke-width="2"/></svg>
+        <div class="sign__card">
+          <div class="sign__face sign__face--open"><b>ABERTO</b><span>open</span></div>
+          <div class="sign__face sign__face--closed"><b>FECHADO</b><span>closed</span></div>
+        </div>
+      </div>
+      <div class="where__hours">
+        <p class="live" data-status><i></i><b>…</b></p>
+        <ul class="hours" id="hours">
+          <li data-d="2,3,4,5"><span>Terça a Sexta</span><span>09:00 — 20:00</span></li>
+          <li data-d="6"><span>Sábado</span><span>09:00 — 18:00</span></li>
+          <li data-d="0"><span>Domingo</span><span>Fechado</span></li>
+          <li data-d="1"><span>Segunda</span><span>Fechado</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="where__ctas">
+      <a class="btn btn--chrome" href="https://www.google.com/maps/search/?api=1&query=Rua+Platina+266+Tatuap%C3%A9+S%C3%A3o+Paulo" target="_blank" rel="noopener" data-magnet>Como chegar ↗</a>
+      <a class="btn btn--ghost" href="https://wa.me/5511984253611" target="_blank" rel="noopener" data-magnet>WhatsApp</a>
+    </div>
+  </div>
+  <div class="where__map">
+    <iframe title="Mapa da Verus Studio" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Rua+Platina+266+Tatuap%C3%A9+S%C3%A3o+Paulo&z=16&output=embed"></iframe>
+    <div class="where__pin"><img src="img/favicon.png" alt=""></div>
+  </div>
+</section>
+
+</main>
+
+<footer class="ft">
+  <div class="ft__sign">
+    <img class="ft__logo" src="img/logo-verus.png" alt="Verus Studio Barber" loading="lazy">
+    <span class="ft__sheen"></span>
+  </div>
+  <p class="serif ft__line">Espaço pra quem valoriza qualidade.</p>
+  <div class="ft__links">
+    <a href="https://www.instagram.com/verusstudio_/" target="_blank" rel="noopener">Instagram @verusstudio_</a>
+    <a href="https://wa.me/5511984253611" target="_blank" rel="noopener">WhatsApp (11) 98425-3611</a>
+    <a href="#agendar">Agendar</a>
+  </div>
+  <p class="mono ft__copy">© 2026 Verus Studio Barber · Rua Platina, 266 · Tatuapé · SP</p>
+  <div class="floor" aria-hidden="true"><div class="floor__grid"></div></div>
+</footer>
+
+<!-- LIGHTBOX -->
+<div class="lb" id="lb" hidden>
+  <button class="lb__close" id="lbClose" aria-label="Fechar">×</button>
+  <video id="lbVideo" playsinline controls></video>
+</div>
+
+
+<script src="main.js"></script>
+</body>
+</html>
